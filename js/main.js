@@ -21,10 +21,14 @@ function Players(name, symbol) {
     return { getName, getSymbol }
 }
 
+
+
+
+//module to house gameBoard object and boardarray inside it
 var gameBoard = (function() {
     var boardArray = [
-        [X],
-        [O],
+        ['X'],
+        ['O'],
         [],
         [],
         [],
@@ -33,24 +37,67 @@ var gameBoard = (function() {
         [],
         []
     ];
-
+    return {
+        boardArray: boardArray
+    };
 
 })();
 
 
 
+var displayController = (function() {
+    //working
+    function Render(board) {
+        const boxes = document.querySelectorAll('.box');
+        var count = 0;
+        boxes.forEach((box) => {
+            if (board[count][0] == 'X') {
+
+                box.innerHTML = '<span> X</span>';
+
+            } else if (board[count][0] == 'O') {
+
+                box.innerHTML = '<span> O</span>';
+            }
+            count++;
+
+        });
 
 
+        count = 0;
 
 
-function Render(Player1, Player2) {
+    }
+
+    return {
+        Render: Render
+    };
+
+})();
 
 
+// //working
+// function Render(board) {
+//     const boxes = document.querySelectorAll('.box');
+//     var count = 0;
+//     boxes.forEach((box) => {
+//         if (board[count][0] == 'X') {
 
-}
+//             box.innerHTML = '<span> X</span>';
+
+//         } else if (board[count][0] == 'O') {
+
+//             box.innerHTML = '<span> O</span>';
+//         }
+//         count++;
+
+//     });
 
 
+//     count = 0;
 
+
+// }
 
 StartButton.addEventListener('click', function() {
     const FirstPlayer = document.querySelector('#PlayerO');
@@ -80,3 +127,11 @@ MultiPlayer.addEventListener('click', function() {
     MultiPlayerNameInput.classList.remove('displayNone');
 
 })
+
+
+
+
+
+
+
+displayController.Render(gameBoard.boardArray);
