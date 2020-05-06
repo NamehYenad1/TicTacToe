@@ -21,13 +21,28 @@
 
 
     <div id="panel">
-
+        <div id='warning' class='displayNone'> Square Taken </div>
         <div id='Mode'>
             <h1>Game Type </h1>
         </div>
 
+        <div id='ResultWrapper' class='displayNone'>
+            <div id='Player1Score' class='PlayerScore'>
+
+            </div>
+            <div id='Player2Score' class='PlayerScore'>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
         <div id="MainWrapper">
-            <div id='TypeButtonWrapper' class='displayNone'>
+            <div id='TypeButtonWrapper'>
                 <div id="SinglePlayer" class="TypeButton">
                     <span class='ButtonText'> Impossible AI</span>
                 </div>
@@ -51,7 +66,7 @@
                 <button class="eightbit" id='StartButton'><a href="#" class="btn">START</a></button>
             </div>
 
-            <div id='gameBoard'>
+            <div id='gameBoard' class='displayNone'>
                 <div id='0' class='box'> </div>
                 <div id='1' class='box'> </div>
                 <div id='2' class='box'> </div>
@@ -63,6 +78,26 @@
                 <div id='8' class='box'> </div>
             </div>
 
+            <div id='WinnerTable' class='displayNone'>
+                <div id='WinnerText'>
+                    <h1 id='Winner'>
+
+                    </h1>
+
+                </div>
+
+                <div id='IconWrapper'>
+                    <div id='HomeIcon'>
+                        <img class='images' src='images/home-24px.svg'>
+                    </div>
+                    <div id='ReplayIcon'>
+                        <img class='images' src='images/replay-24px.svg'>
+                    </div>
+                </div>
+
+
+
+            </div>
 
 
 
@@ -76,7 +111,7 @@
 
 
 
-    <script src="js/particles.js-master/particles.min.js"></script>
+    <script src="js/particles.js-master/particles.js"></script>
 
     <script>
         particlesJS.load('particles-js',
